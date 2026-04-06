@@ -50,9 +50,8 @@ export const createComment = async (request, reply) => {
   } catch (err) {
     console.error(err);
     reply.code(500).headers({ "Content-Type": "application/json" }).send({
-      error: err.name,
-      message: err.message,
-      stack: err.stack,
+      error: "Internal Server Error",
+      message: "Failed to create comment",
     });
   }
 };
@@ -88,9 +87,8 @@ export const getComments = async (request, reply) => {
   } catch (err) {
     console.error(err);
     reply.code(500).headers({ "Content-Type": "application/json" }).send({
-      error: err.name,
-      message: err.message,
-      stack: err.stack,
+      error: "Internal Server Error",
+      message: "Failed to get comments",
     });
   }
 };
@@ -153,9 +151,8 @@ export const deleteComment = async (request, reply) => {
   } catch (err) {
     console.error(err);
     reply.code(500).headers({ "Content-Type": "application/json" }).send({
-      error: err.name,
-      message: err.message,
-      stack: err.stack,
+      error: "Internal Server Error",
+      message: "Failed to delete comment",
     });
   }
 };
