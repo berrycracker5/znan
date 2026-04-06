@@ -7,6 +7,9 @@
 ```
 ├── frontend/          # Next.js 프론트엔드 (Vercel 배포)
 ├── backend/           # Fastify 백엔드 (AWS Lambda 배포)
+├── .github/workflows/ # CI/CD (GitHub Actions)
+├── .kiro/             # Kiro IDE 설정 & steering
+├── aidlc-docs/        # AI-DLC 문서
 └── README.md
 ```
 
