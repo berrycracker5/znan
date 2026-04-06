@@ -1,13 +1,18 @@
-name: Deploy to Lambda
+name: Deploy Backend to Lambda
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'backend/**'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
 
     steps:
       - name: Checkout repository
