@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv 환경 파일
+.env
+.env.*   # 예: .env.local, .env.development 등
+
+# OS 파일
+.DS_Store
+Thumbs.db
+
+# Runtime output
+dist/
+build/
+coverage/
+
+# Editor settings
+.vscode/
+.idea/
+
+# Fastify-specific dev tools
+.pino-pretty.log
