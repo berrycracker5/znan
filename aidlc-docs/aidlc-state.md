@@ -1,28 +1,26 @@
 # AI-DLC State Tracking
 
 ## Project Information
-- **Project Type**: Brownfield
+- **Project Type**: Brownfield (2개 레포 통합)
 - **Start Date**: 2026-04-06T00:00:00Z
-- **Current Stage**: INCEPTION - Workspace Detection
+- **Current Stage**: INCEPTION - Requirements Analysis
 
 ## Workspace State
 - **Existing Code**: Yes
-- **Programming Languages**: TypeScript, TSX, CSS
-- **Build System**: pnpm + Next.js
-- **Project Structure**: Monolith (Next.js App Router)
+- **Monorepo**: frontend/ (Next.js) + backend/ (Fastify/Lambda)
+- **Programming Languages**: TypeScript, JavaScript, CSS
+- **Build System**: pnpm (frontend) + npm (backend)
+- **Deployment**: Vercel (frontend) + AWS Lambda via GitHub Actions (backend)
+- **Database**: AWS DynamoDB (단일 테이블 설계)
 - **Reverse Engineering Needed**: Yes
 - **Workspace Root**: .
 
-## Extension Configuration
-- **security/baseline/security-baseline**: Pending (will be determined during Requirements Analysis)
-
 ## Code Location Rules
-- **Application Code**: Workspace root (NEVER in aidlc-docs/)
+- **Application Code**: frontend/, backend/ (NEVER in aidlc-docs/)
 - **Documentation**: aidlc-docs/ only
-- **Structure patterns**: See code-generation.md Critical Rules
 
 ## Reverse Engineering Status
-- [x] Reverse Engineering - Completed on 2026-04-06T00:05:00Z
+- [x] Reverse Engineering - Completed on 2026-04-06
 - **Artifacts Location**: aidlc-docs/inception/reverse-engineering/
 
 ## Stage Progress
