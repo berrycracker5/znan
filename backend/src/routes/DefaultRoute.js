@@ -4,7 +4,7 @@ async function DefaultRoute(fastify, options) {
     return { status: "ok" };
   });
   fastify.get("/health", async (request, reply) => {
-    return { status: "ok", deployedAt: "2026-04-06T16:32:00Z" };
+    return { status: "ok" };
   });
 }
 
