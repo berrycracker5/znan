@@ -13,7 +13,7 @@
 ## 기술 스택
 
 ### Frontend
-- Next.js 16 (App Router)
+- Next.js 16 (App Router, Node.js 22)
 - React 19, TypeScript
 - Tailwind CSS 4, Radix UI
 - TanStack Query (서버 상태 관리)
@@ -21,8 +21,8 @@
 - React Hook Form + Zod (폼 검증)
 
 ### Backend
-- Fastify 5 (Node.js)
-- AWS Lambda + API Gateway
+- Fastify 5 (Node.js 22)
+- AWS Lambda (nodejs22.x) + API Gateway
 - DynamoDB (단일 테이블 설계)
 - bcrypt (비밀번호 해싱)
 

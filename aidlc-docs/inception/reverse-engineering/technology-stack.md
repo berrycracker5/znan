@@ -18,8 +18,8 @@
 ## Backend
 | Technology | Version | Purpose |
 |-----------|---------|---------|
-| Fastify | 5.4.0 | HTTP 서버 프레임워크 |
-| @fastify/aws-lambda | 5.1.4 | Lambda 어댑터 |
+| Fastify | 5.4.0 | HTTP 서버 프레임워크 (Node.js 22) |
+| @fastify/aws-lambda | 5.1.4 | Lambda 어댑터 (nodejs22.x) |
 | @fastify/cors | 11.0.1 | CORS 처리 |
 | AWS SDK DynamoDB | 3.844.0 | DynamoDB 클라이언트 |
 | bcrypt | 6.0.0 | 비밀번호 해싱 |
