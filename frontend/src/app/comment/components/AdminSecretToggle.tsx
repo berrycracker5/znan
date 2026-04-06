@@ -1,5 +1,6 @@
 "use client";
 
+import { useAdminStore } from "@/stores/useAdminStore";
 import { Button } from "@/styles/components/ui/button";
 import { Input } from "@/styles/components/ui/input";
 import {
@@ -11,26 +12,20 @@ import { LockIcon, UnlockIcon } from "lucide-react";
 import React, { useState } from "react";
 
 interface AdminSecretToggleProps {
-  isAdmin: boolean;
-  onAdminLogin: (password: string) => void;
-  onAdminLogout: () => void;
-  isLoading?: boolean;
-  isError?: boolean;
+  isSecretError?: boolean;
 }
 
 const AdminSecretToggle: React.FC<AdminSecretToggleProps> = ({
-  isAdmin,
-  onAdminLogin,
-  onAdminLogout,
-  isLoading,
-  isError,
+  isSecretError,
 }) => {
+  const { isAdmin, setAdmin, clearAdmin } = useAdminStore();
   const [open, setOpen] = useState(false);
   const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
-    onAdminLogin(password);
+    setAdmin(password);
     setPassword("");
+    setOpen(false);
   };
 
   if (isAdmin) {
@@ -39,7 +34,7 @@ const AdminSecretToggle: React.FC<AdminSecretToggleProps> = ({
         variant="ghost"
         size="sm"
         className="cursor-pointer gap-1 text-xs"
-        onClick={onAdminLogout}
+        onClick={clearAdmin}
       >
         <UnlockIcon className="size-4" />
         비밀댓글 보는 중
@@ -62,7 +57,7 @@ const AdminSecretToggle: React.FC<AdminSecretToggleProps> = ({
       <PopoverContent className="w-64">
         <div className="space-y-2">
           <p className="text-sm font-medium">관리자 비밀번호</p>
-          {isError && (
+          {isSecretError && (
             <p className="text-destructive text-xs">
               비밀번호가 올바르지 않습니다.
             </p>
@@ -82,9 +77,8 @@ const AdminSecretToggle: React.FC<AdminSecretToggleProps> = ({
               size="sm"
               className="cursor-pointer"
               onClick={handleSubmit}
-              disabled={isLoading}
             >
-              {isLoading ? "확인 중..." : "확인"}
+              확인
             </Button>
           </div>
         </div>

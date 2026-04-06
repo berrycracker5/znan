@@ -24,9 +24,11 @@ export default function useMutationDeleteComment() {
     mutationFn: (requestData: DeleteCommentRequest) =>
       fetchDeleteComment(requestData),
     onSuccess: () => {
-      // 성공 시 수행할 작업
       queryClient.invalidateQueries({
         queryKey: ["comments"],
+      });
+      queryClient.invalidateQueries({
+        queryKey: ["secretComments"],
       });
     },
   });

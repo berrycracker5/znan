@@ -23,13 +23,14 @@ export default function useMutationCreateComment() {
     mutationFn: (requestData: CreateCommentRequest) =>
       fetchCreateComment(requestData),
     onSuccess: () => {
-      // 성공 시 수행할 작업
       queryClient.invalidateQueries({
         queryKey: ["comments"],
       });
+      queryClient.invalidateQueries({
+        queryKey: ["secretComments"],
+      });
     },
     onError: () => {
-      // 실패 시 수행할 작업
       console.error("Error adding comment");
     },
   });

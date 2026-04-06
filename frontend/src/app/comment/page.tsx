@@ -1,11 +1,10 @@
 "use client";
 
 import useQueryGetComments from "@/apis/getComments";
-import useMutationGetSecretComments from "@/apis/getSecretComments";
+import useQueryGetSecretComments from "@/apis/getSecretComments";
 import HorizontalLine from "@/components/HorizontalLine";
 import PageTitle from "@/components/PageTitle";
-import { GetCommentsResponse } from "@/types/comment";
-import { useState } from "react";
+import { useAdminStore } from "@/stores/useAdminStore";
 import AdminSecretToggle from "./components/AdminSecretToggle";
 import CommentForm from "./components/CommentForm";
 import CommentList from "./components/CommentList";
@@ -15,45 +14,21 @@ import CommentRegistContainer from "./components/CommentRegistContainer";
 
 const Comment = () => {
   const { data: commentListData, isPending } = useQueryGetComments();
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [secretData, setSecretData] = useState<GetCommentsResponse | undefined>(
-    undefined
-  );
+  const { isAdmin, adminPassword } = useAdminStore();
   const {
-    mutate: getSecretComments,
+    data: secretData,
     isPending: isSecretPending,
     isError: isSecretError,
-    reset: resetSecretError,
-  } = useMutationGetSecretComments();
+  } = useQueryGetSecretComments(adminPassword);
 
-  const handleAdminLogin = (password: string) => {
-    getSecretComments(password, {
-      onSuccess: (data) => {
-        setSecretData(data);
-        setIsAdmin(true);
-      },
-    });
-  };
-
-  const handleAdminLogout = () => {
-    setIsAdmin(false);
-    setSecretData(undefined);
-    resetSecretError();
-  };
-
-  const displayData = isAdmin ? secretData : commentListData;
+  const displayData = isAdmin && secretData ? secretData : commentListData;
+  const isLoading = isAdmin ? isSecretPending : isPending;
 
   return (
     <>
       <div className="flex items-center justify-between">
         <PageTitle>Comment</PageTitle>
-        <AdminSecretToggle
-          isAdmin={isAdmin}
-          onAdminLogin={handleAdminLogin}
-          onAdminLogout={handleAdminLogout}
-          isLoading={isSecretPending}
-          isError={isSecretError}
-        />
+        <AdminSecretToggle isSecretError={isSecretError} />
       </div>
 
       <CommentRegistContainer>
@@ -63,7 +38,7 @@ const Comment = () => {
       <HorizontalLine />
 
       <CommentListContainer>
-        {isPending ? (
+        {isLoading ? (
           <CommentListSkeleton />
         ) : (
           <CommentList commentListData={displayData} />

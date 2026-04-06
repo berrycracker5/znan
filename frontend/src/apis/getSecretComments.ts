@@ -1,15 +1,13 @@
 import BASE_API_URL from "@/constants/api";
 import { GetCommentsResponse } from "@/types/comment";
-import { useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 const fetchGetSecretComments = async (
   adminPassword: string
 ): Promise<GetCommentsResponse> => {
   const res = await fetch(`${BASE_API_URL}/api/comments/secret`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ adminPassword }),
   });
   if (!res.ok) {
@@ -18,9 +16,12 @@ const fetchGetSecretComments = async (
   return res.json();
 };
 
-export default function useMutationGetSecretComments() {
-  return useMutation({
-    mutationFn: (adminPassword: string) =>
-      fetchGetSecretComments(adminPassword),
+export default function useQueryGetSecretComments(
+  adminPassword: string | null
+) {
+  return useQuery({
+    queryKey: ["secretComments", adminPassword],
+    queryFn: () => fetchGetSecretComments(adminPassword!),
+    enabled: !!adminPassword,
   });
 }
