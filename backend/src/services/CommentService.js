@@ -156,3 +156,46 @@ export const deleteComment = async (request, reply) => {
     });
   }
 };
+
+export const getSecretComments = async (request, reply) => {
+  try {
+    const adminPassword = request.body?.adminPassword;
+    if (!adminPassword || adminPassword !== process.env.ADMIN_PASSWORD) {
+      return reply.code(403).headers({ "Content-Type": "application/json" }).send({
+        error: "Forbidden",
+        message: "Invalid admin password",
+      });
+    }
+
+    const command = new QueryCommand({
+      TableName: "ZnanTable",
+      KeyConditionExpression: "pk = :pk AND begins_with(sk, :skPrefix)",
+      ExpressionAttributeValues: {
+        ":pk": { S: "COMMENT" },
+        ":skPrefix": { S: "COMMENT#" },
+      },
+      ScanIndexForward: false,
+    });
+
+    const response = await DynamoDB.send(command);
+    const comments = response.Items.map((item) => ({
+      commentId: item.commentId.S,
+      text: item.text.S,
+      author: item.author.S,
+      authorIp: item.authorIp.S,
+      date: item.date.S,
+      isSecret: item.isSecret.BOOL,
+    }));
+
+    reply
+      .code(200)
+      .headers({ "Content-Type": "application/json" })
+      .send({ comments });
+  } catch (err) {
+    console.error(err);
+    reply.code(500).headers({ "Content-Type": "application/json" }).send({
+      error: "Internal Server Error",
+      message: "Failed to get comments",
+    });
+  }
+};
