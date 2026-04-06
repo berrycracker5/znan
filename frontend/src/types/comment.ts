@@ -14,7 +14,6 @@ export interface CommentType {
   text: string;
   author: string;
   authorIp: string;
-  commentPassword: string;
   date: string;
   isSecret?: boolean;
 }
