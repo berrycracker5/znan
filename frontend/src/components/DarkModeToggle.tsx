@@ -9,17 +9,20 @@ interface DarkModeToggleProps {
   className?: string;
 }
 export const DarkModeToggle = ({ className }: DarkModeToggleProps) => {
-  const [dark, setDark] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") === "dark";
-    }
-    return false;
-  });
+  const [dark, setDark] = useState<boolean | null>(null);
 
   useEffect(() => {
+    const saved = localStorage.getItem("theme") === "dark";
+    setDark(saved);
+  }, []);
+
+  useEffect(() => {
+    if (dark === null) return;
     document.documentElement.classList.toggle("dark", dark);
     localStorage.setItem("theme", dark ? "dark" : "light");
   }, [dark]);
+
+  if (dark === null) return null;
 
   return (
     <div className={clsx("flex items-center space-x-2", className)}>
