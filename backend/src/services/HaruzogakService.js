@@ -126,7 +126,8 @@ export const deleteComment = async (request, reply) => {
       return reply.code(404).send({ error: "댓글을 찾을 수 없습니다." });
     }
 
-    const isMatch = await bcrypt.compare(
+    const isAdmin = commentPassword === process.env.ADMIN_PASSWORD;
+    const isMatch = isAdmin || await bcrypt.compare(
       commentPassword,
       item.commentPassword.S
     );
