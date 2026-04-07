@@ -17,7 +17,7 @@ const MainLayoutWrapper: React.FC<MainLayoutWrapperProps> = ({ children }) => {
   }, [mutate]);
 
   return (
-    <div className="h-screen w-full overflow-y-auto" ref={mainLayoutDivRef}>
+    <div className="h-screen w-full overflow-x-hidden overflow-y-auto" ref={mainLayoutDivRef}>
       {children}
     </div>
   );
