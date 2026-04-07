@@ -384,7 +384,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
             />
           }
           title="HabitStamp V2"
-          period="2026.03 ~ 2026.04"
+          period="2026.04.02 ~ 2026.04.06"
           description={
             <>
               기존 HabitStamp를 완전히 새로 설계한 버전입니다 🏋️
@@ -450,7 +450,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
                 <CognitoBanner className="" />
               </div>
               <div className="col-span-2 col-start-1 row-start-7 flex items-center justify-center">
-                <p className="w-full scale-y-120 scale-x-180 text-center text-4xl font-light -mt-14 ml-4">
+                <p className="w-full scale-y-120 sm:scale-x-180 text-center text-4xl font-light -mt-14 ml-4">
                   →
                 </p>
               </div>
