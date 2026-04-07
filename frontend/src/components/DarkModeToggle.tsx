@@ -22,7 +22,13 @@ export const DarkModeToggle = ({ className }: DarkModeToggleProps) => {
     localStorage.setItem("theme", dark ? "dark" : "light");
   }, [dark]);
 
-  if (dark === null) return null;
+  if (dark === null) {
+    return <div className={clsx("flex items-center space-x-2", className)}>
+      <Sun className="h-4 w-4 md:h-5 md:w-5" />
+      <Switch className="data-[state=unchecked]:bg-gray-500" id="dark-mode" disabled />
+      <Moon className="h-4 w-4 md:h-5 md:w-5" />
+    </div>;
+  }
 
   return (
     <div className={clsx("flex items-center space-x-2", className)}>
