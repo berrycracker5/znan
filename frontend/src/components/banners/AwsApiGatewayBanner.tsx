@@ -13,7 +13,7 @@ const AwsApiGatewayBanner: React.FC<AwsApiGatewayProps> = ({
   return (
     <BannerWrapper className={className} {...props}>
       <AwsApiGatewayIcon className="h-6 w-6" />
-      <p className="ml-1 text-sm font-semibold">APIGateway</p>
+      <p className="ml-1 text-sm font-semibold">API Gateway</p>
     </BannerWrapper>
   );
 };

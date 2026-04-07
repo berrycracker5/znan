@@ -1,4 +1,3 @@
-// TODO: 아이콘 파일 추가 필요 → frontend/src/assets/icons/nodejs.svg
 import NodejsIcon from "@/assets/icons/nodejs.svg";
 import BannerWrapper from "@/components/banners/BannerWrapper";
 import React from "react";

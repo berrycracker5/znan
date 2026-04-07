@@ -1,4 +1,3 @@
-// TODO: 아이콘 파일 추가 필요 → frontend/src/assets/icons/nextjs.svg
 import NextjsIcon from "@/assets/icons/nextjs.svg";
 import BannerWrapper from "@/components/banners/BannerWrapper";
 import React from "react";
