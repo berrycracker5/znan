@@ -440,15 +440,15 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
                 </div>
               </div>
               <div className="col-start-1 row-start-6 flex items-center justify-center">
-                <InternetBanner className="rounded-full px-12 md:px-20 md:py-4 lg:px-40 xl:px-48" />
+                <InternetBanner className="rounded-full px-12" />
               </div>
               <div className="col-start-2 row-start-6 row-span-1 flex items-center justify-center flex-col gap-y-2">
                 <AwsApiGatewayBanner className="" />
                 <span className="text-sm font-semibold">Cognito Auth</span>
               </div>
               <div className="col-span-2 col-start-1 row-start-7 flex items-center justify-center">
-                <p className="w-full scale-y-120 text-center text-4xl font-light">
-                  ↑
+                <p className="w-full scale-y-120 scale-x-180 text-center text-4xl font-light -mt-14 ml-4">
+                  →
                 </p>
               </div>
               <div className="col-span-2 col-start-1 row-start-8 flex items-center justify-center">
