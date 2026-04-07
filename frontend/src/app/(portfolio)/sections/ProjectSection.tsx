@@ -184,6 +184,87 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
         <ProjectItem
           logo={
             <Image
+              src={HabitstampLogo}
+              alt="HabitStamp V2 Logo"
+              className="h-9 w-9 scale-130"
+            />
+          }
+          title="HabitStamp V2"
+          period="2026.03 ~ 2026.04"
+          description={
+            <>
+              기존 HabitStamp를 완전히 새로 설계한 버전입니다 🏋️
+              <br />
+              Next.js + Serverless 아키텍처로 전환하고, Cognito 인증과 Terraform
+              IaC를 도입하여 프로덕션 수준의 풀스택 앱으로 재구축하였습니다.
+            </>
+          }
+          badgeTextList={[
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Zustand",
+            "AWS Lambda",
+            "DynamoDB",
+            "Cognito",
+            "API Gateway",
+            "Terraform",
+          ]}
+          visitLink="https://habitstamp.znan.site"
+        >
+          <SystemDesign>
+            <SystemDesignContent className="grid grid-cols-2 grid-rows-8 gap-x-2 px-2 py-4">
+              <div className="col-span-2 flex w-full items-center justify-center">
+                <div className="flex w-fit items-center justify-center border-1 border-gray-500 p-2 text-3xl md:px-8 lg:px-16 xl:px-20">
+                  <span className="text-sm font-semibold">Next.js</span>
+                  <span className="mx-2 md:mx-4 xl:mx-6">👨‍💻</span>
+                  <span className="text-sm font-semibold">Lambda</span>
+                </div>
+              </div>
+              <div className="col-start-1 row-start-2 flex items-center justify-center">
+                <p className="w-full text-center text-4xl font-light">↓</p>
+              </div>
+              <div className="col-start-2 row-start-2 flex items-center justify-center">
+                <p className="w-full text-center text-4xl font-light">↓</p>
+              </div>
+              <div className="col-start-1 row-start-3 flex items-center justify-center">
+                <VercelBanner />
+              </div>
+              <div className="col-start-2 row-start-3 flex items-center justify-center">
+                <AwsLambdaBanner className="px-4" />
+              </div>
+              <div className="col-start-1 row-start-4 flex items-center justify-center">
+                <p className="w-full text-center text-4xl font-light">↑</p>
+              </div>
+              <div className="col-start-2 row-start-4 flex items-center justify-center">
+                <p className="w-full text-center text-2xl font-light">↑ ↓</p>
+              </div>
+              <div className="col-span-2 row-start-5 flex items-center justify-center gap-4">
+                <AwsApiGatewayBanner />
+                <span className="text-sm font-semibold">Cognito</span>
+              </div>
+              <div className="col-span-2 row-start-6 flex items-center justify-center">
+                <p className="w-full text-center text-4xl font-light">↓</p>
+              </div>
+              <div className="col-span-2 row-start-7 flex items-center justify-center gap-4">
+                <AwsDynamoDBBanner />
+              </div>
+              <div className="col-span-2 row-start-8 mt-4 flex items-center justify-center">
+                <InternetBanner className="rounded-full px-12 md:px-20 md:py-4 lg:px-40 xl:px-48" />
+              </div>
+            </SystemDesignContent>
+            <SystemDesignDescription>
+              Next.js 프론트엔드는 Vercel에서 호스팅되며, AWS Amplify Auth를
+              통해 Cognito 인증(이메일 + Google OAuth)을 처리합니다. 백엔드는
+              단일 Lambda에서 7개 API 라우트를 처리하고, API Gateway의 Cognito
+              Authorizer가 JWT를 검증합니다. 모든 인프라는 Terraform으로
+              관리됩니다.
+            </SystemDesignDescription>
+          </SystemDesign>
+        </ProjectItem>
+        <ProjectItem
+          logo={
+            <Image
               src={CaringNoteLogo}
               alt="Caring Note Logo"
               className="h-9 w-9 rounded-sm"
