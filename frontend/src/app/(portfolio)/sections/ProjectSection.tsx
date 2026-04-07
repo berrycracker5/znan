@@ -10,6 +10,7 @@ import AwsDynamoDBBanner from "@/components/banners/AwsDynamoDBBanner";
 import AwsEc2Banner from "@/components/banners/AwsEc2Banner";
 import AwsLambdaBanner from "@/components/banners/AwsLambdaBanner";
 import AwsS3Banner from "@/components/banners/AwsS3Banner";
+import CognitoBanner from "@/components/banners/CognitoBanner";
 import ExpressBanner from "@/components/banners/ExpressBanner";
 import GhcrBanner from "@/components/banners/GhcrBanner";
 import GithubActionsBanner from "@/components/banners/GithubActionsBanner";
@@ -17,7 +18,9 @@ import GithubBanner from "@/components/banners/GithubBanner";
 import InternetBanner from "@/components/banners/InternetBanner";
 import KubernetesBanner from "@/components/banners/KubernetesBanner";
 import LetsEncryptBanner from "@/components/banners/LetsEncryptBanner";
+import NextjsBanner from "@/components/banners/NextjsBanner";
 import NginxBanner from "@/components/banners/NginxBanner";
+import NodejsBanner from "@/components/banners/NodejsBanner";
 import PostgresBanner from "@/components/banners/PostgresBanner";
 import ReactBanner from "@/components/banners/ReactBanner";
 import SpringBanner from "@/components/banners/SpringBanner";
@@ -407,9 +410,9 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
             <SystemDesignContent className="grid grid-cols-[1fr_1fr_auto] grid-rows-6 gap-x-1 px-2 py-4">
               <div className="col-span-2 flex w-full items-center justify-center">
                 <div className="flex w-fit items-center justify-center border-1 border-gray-500 p-2 text-3xl md:px-8 lg:px-16 xl:px-20">
-                  <span className="text-sm font-semibold">Next.js</span>
+                  <NextjsBanner className="" />
                   <span className="mx-2 md:mx-4 xl:mx-6">👨‍💻</span>
-                  <span className="text-sm font-semibold">Node.js</span>
+                  <NodejsBanner className="" />
                 </div>
               </div>
               <div className="col-start-1 row-start-2 flex items-center justify-center pl-8">
@@ -444,7 +447,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
               </div>
               <div className="col-start-2 row-start-6 row-span-1 flex items-center justify-center flex-col gap-y-2">
                 <AwsApiGatewayBanner className="" />
-                <span className="text-sm font-semibold">Cognito Auth</span>
+                <CognitoBanner className="" />
               </div>
               <div className="col-span-2 col-start-1 row-start-7 flex items-center justify-center">
                 <p className="w-full scale-y-120 scale-x-180 text-center text-4xl font-light -mt-14 ml-4">
