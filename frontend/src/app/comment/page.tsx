@@ -25,7 +25,7 @@ const Comment = () => {
 
   return (
     <>
-      <div className="flex items-center justify-between">
+      <div className="flex w-full items-center justify-between">
         <PageTitle>Comment</PageTitle>
         <AdminSecretToggle />
       </div>
