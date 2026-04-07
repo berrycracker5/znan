@@ -404,7 +404,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
           visitLink="https://habitstamp.znan.site"
         >
           <SystemDesign>
-            <SystemDesignContent className="grid grid-cols-[1fr_1fr_auto] grid-rows-8 gap-x-1 px-2 py-4">
+            <SystemDesignContent className="grid grid-cols-[1fr_1fr_auto] grid-rows-6 gap-x-1 px-2 py-4">
               <div className="col-span-2 flex w-full items-center justify-center">
                 <div className="flex w-fit items-center justify-center border-1 border-gray-500 p-2 text-3xl md:px-8 lg:px-16 xl:px-20">
                   <span className="text-sm font-semibold">Next.js</span>
@@ -414,13 +414,13 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
               </div>
               <div className="col-start-1 row-start-2 flex items-center justify-center pl-8">
                 <p className="w-full text-end text-4xl font-light">↓</p>
-                <p className="font-base w-full text-start text-sm">Vercel</p>
+                <p className="font-base w-full text-start text-sm"></p>
               </div>
               <div className="col-start-2 row-start-2 flex items-center justify-start">
                 <p className="w-full text-end text-4xl font-light">↓</p>
-                <p className="font-base w-full text-start text-sm">Lambda</p>
+                <p className="font-base w-full text-start text-sm"></p>
               </div>
-              <div className="col-start-1 row-start-3 flex items-center justify-center">
+              <div className="col-start-1 row-span-1 row-start-3 flex items-center justify-center">
                 <VercelBanner />
               </div>
               <div className="col-span-2 col-start-2 row-start-3 flex items-center justify-center md:justify-center">
@@ -440,23 +440,18 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
                 </div>
               </div>
               <div className="col-start-1 row-start-6 flex items-center justify-center">
+                <InternetBanner className="rounded-full px-12 md:px-20 md:py-4 lg:px-40 xl:px-48" />
+              </div>
+              <div className="col-start-2 row-start-6 row-span-1 flex items-center justify-center flex-col gap-y-2">
+                <AwsApiGatewayBanner className="" />
                 <span className="text-sm font-semibold">Cognito Auth</span>
               </div>
-              <div className="col-start-1 row-start-7 flex items-center justify-center">
-                <p className="w-full scale-y-120 text-center text-4xl font-light">
-                  ↓
-                </p>
-              </div>
-              <div className="col-start-2 row-start-6 flex items-center justify-center">
-                <AwsApiGatewayBanner className="" />
-              </div>
-              <div className="col-start-2 row-start-7 flex items-center justify-center">
+              <div className="col-span-2 col-start-1 row-start-7 flex items-center justify-center">
                 <p className="w-full scale-y-120 text-center text-4xl font-light">
                   ↑
                 </p>
               </div>
               <div className="col-span-2 col-start-1 row-start-8 flex items-center justify-center">
-                <InternetBanner className="rounded-full px-12 md:px-20 md:py-4 lg:px-40 xl:px-48" />
               </div>
             </SystemDesignContent>
             <SystemDesignDescription>
