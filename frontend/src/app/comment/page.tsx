@@ -18,7 +18,6 @@ const Comment = () => {
   const {
     data: secretData,
     isPending: isSecretPending,
-    isError: isSecretError,
   } = useQueryGetSecretComments(adminPassword);
 
   const displayData = isAdmin && secretData ? secretData : commentListData;
@@ -28,7 +27,7 @@ const Comment = () => {
     <>
       <div className="flex items-center justify-between">
         <PageTitle>Comment</PageTitle>
-        <AdminSecretToggle isSecretError={isSecretError} />
+        <AdminSecretToggle />
       </div>
 
       <CommentRegistContainer>

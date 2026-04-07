@@ -1,5 +1,6 @@
 "use client";
 
+import BASE_API_URL from "@/constants/api";
 import { useAdminStore } from "@/stores/useAdminStore";
 import { Button } from "@/styles/components/ui/button";
 import { Input } from "@/styles/components/ui/input";
@@ -11,21 +12,34 @@ import {
 import { LockIcon, UnlockIcon } from "lucide-react";
 import React, { useState } from "react";
 
-interface AdminSecretToggleProps {
-  isSecretError?: boolean;
-}
-
-const AdminSecretToggle: React.FC<AdminSecretToggleProps> = ({
-  isSecretError,
-}) => {
+const AdminSecretToggle: React.FC = () => {
   const { isAdmin, setAdmin, clearAdmin } = useAdminStore();
   const [open, setOpen] = useState(false);
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-  const handleSubmit = () => {
-    setAdmin(password);
-    setPassword("");
-    setOpen(false);
+  const handleSubmit = async () => {
+    setIsLoading(true);
+    setIsError(false);
+    try {
+      const res = await fetch(`${BASE_API_URL}/api/comments/secret`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ adminPassword: password }),
+      });
+      if (!res.ok) {
+        setIsError(true);
+        return;
+      }
+      setAdmin(password);
+      setPassword("");
+      setOpen(false);
+    } catch {
+      setIsError(true);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isAdmin) {
@@ -43,7 +57,7 @@ const AdminSecretToggle: React.FC<AdminSecretToggleProps> = ({
   }
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover open={open} onOpenChange={(v) => { setOpen(v); if (!v) setIsError(false); }}>
       <PopoverTrigger asChild>
         <Button
           variant="ghost"
@@ -57,7 +71,7 @@ const AdminSecretToggle: React.FC<AdminSecretToggleProps> = ({
       <PopoverContent className="w-64">
         <div className="space-y-2">
           <p className="text-sm font-medium">관리자 비밀번호</p>
-          {isSecretError && (
+          {isError && (
             <p className="text-destructive text-xs">
               비밀번호가 올바르지 않습니다.
             </p>
@@ -77,8 +91,9 @@ const AdminSecretToggle: React.FC<AdminSecretToggleProps> = ({
               size="sm"
               className="cursor-pointer"
               onClick={handleSubmit}
+              disabled={isLoading}
             >
-              확인
+              {isLoading ? "확인 중..." : "확인"}
             </Button>
           </div>
         </div>
