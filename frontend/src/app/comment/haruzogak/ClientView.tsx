@@ -23,7 +23,7 @@ const Comment = () => {
       </div>
 
       <CommentRegistContainer>
-        <div className="flex w-full items-center justify-center rounded-md border border-dashed border-gray-300 py-6 text-sm text-gray-400 dark:border-gray-600 dark:text-gray-500">
+        <div className="flex w-full mt-3 items-center justify-center rounded-md border border-dashed border-gray-300 py-6 text-sm text-gray-400 dark:border-gray-600 dark:text-gray-500">
           댓글 작성이 종료되었습니다 📝
         </div>
       </CommentRegistContainer>
