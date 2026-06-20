@@ -118,6 +118,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
           badgeTextList={["React", "Spring Boot", "JAVA", "AWS"]}
           visitLink="https://habitstamp.znan.online"
         >
+          <SystemDesign>
             <SystemDesignContent className="grid grid-cols-[1fr_1fr_auto] grid-rows-8 gap-x-1 px-2 py-4">
               <div className="col-span-2 flex w-full items-center justify-center">
                 <div className="flex w-fit items-center justify-center border-1 border-gray-500 p-2 text-3xl md:px-8 lg:px-16 xl:px-20">
