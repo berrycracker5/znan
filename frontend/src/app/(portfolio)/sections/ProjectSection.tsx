@@ -66,7 +66,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
             </>
           }
           badgeTextList={["React", "TypeScript", "NPM", "Git"]}
-          visitLink="https://v1.znan.site"
+          visitLink="https://v1.znan.online"
         >
           <SystemDesign>
             <SystemDesignContent className="grid grid-cols-[1fr_auto_1fr] grid-rows-5 gap-x-1 gap-y-0 px-1 py-4">
@@ -116,9 +116,8 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
               캘린더에 성공여부를 체크하여 달성율을 확인하는 용도입니다 📆
               `}
           badgeTextList={["React", "Spring Boot", "JAVA", "AWS"]}
-          visitLink="https://habitstamp.znan.site"
+          visitLink="https://habitstamp.znan.online"
         >
-          <SystemDesign>
             <SystemDesignContent className="grid grid-cols-[1fr_1fr_auto] grid-rows-8 gap-x-1 px-2 py-4">
               <div className="col-span-2 flex w-full items-center justify-center">
                 <div className="flex w-fit items-center justify-center border-1 border-gray-500 p-2 text-3xl md:px-8 lg:px-16 xl:px-20">
@@ -404,7 +403,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
             "API Gateway",
             "Terraform",
           ]}
-          visitLink="https://habitstamp.znan.site"
+          visitLink="https://habitstamp.znan.online"
         >
           <SystemDesign>
             <SystemDesignContent className="grid grid-cols-[1fr_1fr_auto] grid-rows-6 gap-x-1 px-2 py-4">

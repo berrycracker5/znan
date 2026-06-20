@@ -9,14 +9,14 @@ import TanQueryProviders from "./TanQueryProviders";
 export const metadata: Metadata = {
   title: "ZNAN | Software Engineer",
   description: "박진완의 경력과 기술을 소개합니다.",
-  metadataBase: new URL("https://znan.site"),
+  metadataBase: new URL("https://znan.online"),
   icons: {
     icon: "/profile.ico",
   },
   openGraph: {
     title: "ZNAN | Software Engineer",
     description: "풀스택 개발자 박진완의 포트폴리오",
-    url: "https://znan.site",
+    url: "https://znan.online",
     images: [
       {
         url: "/og/znan-og.png",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     images: ["/profile.ico"],
   },
   alternates: {
-    canonical: "https://znan.site",
+    canonical: "https://znan.online",
   },
   robots: {
     index: true,
@@ -56,7 +56,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Jinwan Park",
-              url: "https://znan.site",
+              url: "https://znan.online",
               sameAs: [
                 "https://github.com/berrycracker5",
                 "https://instagram.com/z_____nan",

@@ -82,13 +82,13 @@ export default function MainSidebar() {
     {
       logo: ZnanV1Logo,
       label: "Portfolio V1",
-      action: () => window.open("https://v1.znan.site", "_blank"),
+      action: () => window.open("https://v1.znan.online", "_blank"),
       className: "scale-125",
     },
     {
       logo: HabitstampLogo,
       label: "Habitstamp",
-      action: () => window.open("https://habitstamp.znan.site", "_blank"),
+      action: () => window.open("https://habitstamp.znan.online", "_blank"),
       className: "scale-180",
     },
     {

@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://znan.site
+Host: https://znan.online
 
 # Sitemaps
-Sitemap: https://znan.site/sitemap.xml
+Sitemap: https://znan.online/sitemap.xml

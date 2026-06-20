@@ -29,9 +29,9 @@ export default function init() {
     origin: [
       "http://localhost:8080", // Next.js 개발 서버
       "http://localhost:5173", // Vite 개발 서버
-      "https://www.znan.site",
-      "https://v2.znan.site",
-      "https://znan.site",
+      "https://www.znan.online",
+      "https://v2.znan.online",
+      "https://znan.online",
       "https://znan-web.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],

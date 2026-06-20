@@ -1,5 +1,5 @@
 // next-sitemap.config.js
 module.exports = {
-  siteUrl: "https://znan.site",
+  siteUrl: "https://znan.online",
   generateRobotsTxt: true,
 };

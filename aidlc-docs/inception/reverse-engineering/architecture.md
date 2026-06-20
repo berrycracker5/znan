@@ -67,7 +67,7 @@ backend/src/
 
 ### Frontend (Vercel)
 - Git push → Vercel 자동 빌드 & 배포
-- 도메인: znan.site, www.znan.site
+- 도메인: znan.online, www.znan.online
 
 ### Backend (AWS Lambda)
 - Git push (main) → GitHub Actions
